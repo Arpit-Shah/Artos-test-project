@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Project Info -->
+	<name>${project.groupId}:${project.artifactId}</name>
+	<url>https://github.com/Arpit-Shah/Artos</url>
+	<description>The ARTOS "ART OF SYSTEM TESTING" is a framework designed for regression, functional, integration, end to end and/or unit testing.</description>
+	<inceptionYear>2018</inceptionYear>
+
+	<!-- Project GAV Info -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.companyname</groupId>
+	<artifactId>artos-test-project</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Organisation Info -->
+	<organization>
+		<url>www.company.com</url>
+		<name>CompanyName</name>
+	</organization>
+
+	<!-- Licence Info -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.theartos</groupId>
+			<artifactId>artos</artifactId>
+			<version>[0.0.6,)</version>
+		</dependency>
+	</dependencies>
+
+	<!-- Profile to help executing org.codehaus.mojo plugin in different environment -->
+	<profiles>
+		<profile>
+			<id>Windows</id>
+			<activation>
+				<os>
+					<family>Windows</family>
+				</os>
+			</activation>
+			<properties>
+				<script.extension>.bat</script.extension>
+			</properties>
+		</profile>
+		<profile>
+			<id>unix</id>
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<properties>
+				<script.extension>.sh</script.extension>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>${basedir}/src/test</testSourceDirectory>
+
+		<plugins>
+			<!-- Launch ARTOS from command line -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>./Run_ARTOS${script.extension}</executable>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
