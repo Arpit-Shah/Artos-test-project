@@ -7,7 +7,7 @@ import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN ARTOS is used as a test framework AND DataProvider annotation is used THEN test logic with multiple input is easy to execute")
-@TestCase(sequence = 2, dataprovider = "TEST_DATA_NAME_NUM")
+@TestCase(sequence = 2)
 public class Sample_DataProvider implements TestExecutable {
 
 	/**
@@ -17,7 +17,7 @@ public class Sample_DataProvider implements TestExecutable {
 	 * 		* In this example data provider method tag is "TEST_DATA_NAME_NUM" and method is implemented in class called "DataProviderClass.java"
 	 * </PRE>
 	 */
-	@Unit(sequence = 1)
+	@Unit(sequence = 1, dataprovider = "TEST_DATA_NAME_NUM")
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.getLogger().info("This is object 1 : " + (String) context.getParameterisedObject1());
