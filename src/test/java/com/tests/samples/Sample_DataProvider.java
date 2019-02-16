@@ -8,7 +8,6 @@ import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 import com.artos.utils.Transform;
 
-@KnownToFail(bugref = "JIRA-124")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN ARTOS is used as a test framework AND DataProvider annotation is used THEN test logic with multiple input is easy to execute")
 @TestCase(sequence = 2)
 public class Sample_DataProvider implements TestExecutable {
@@ -21,6 +20,7 @@ public class Sample_DataProvider implements TestExecutable {
 	 * 		* This example demonstrates how to get 2D object containing [String][String]
 	 * </PRE>
 	 */
+	@KnownToFail(bugref = "JIRA-124")
 	@Unit(sequence = 1, dataprovider = "TEST_DATA_NAME_NUM")
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------

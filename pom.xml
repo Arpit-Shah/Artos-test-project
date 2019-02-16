@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!-- Project Info -->
@@ -32,9 +31,15 @@
 		<dependency>
 			<groupId>com.theartos</groupId>
 			<artifactId>artos</artifactId>
-			<version>[0.0.6,)</version>
+			<version>[0.0.7,)</version>
 		</dependency>
 	</dependencies>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	
 
 	<!-- Profile to help executing org.codehaus.mojo plugin in different environment -->
 	<profiles>
@@ -63,10 +68,20 @@
 	</profiles>
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>${basedir}/src/test</testSourceDirectory>
+		<sourceDirectory>src/test/java</sourceDirectory>
+		<testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
 
 		<plugins>
+			<!-- Compiler plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version> <!-- or whatever current version -->
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 			<!-- Launch ARTOS from command line -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
