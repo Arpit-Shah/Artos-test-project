@@ -1,7 +1,15 @@
 package com.tests.samples;
 
 import java.util.ArrayList;
+
+import com.artos.annotation.AfterTest;
+import com.artos.annotation.BeforeTestSuite;
+import com.artos.annotation.AfterTestSuite;
+import com.artos.annotation.AfterTestUnit;
+import com.artos.annotation.BeforeTest;
+import com.artos.annotation.BeforeTestUnit;
 import com.artos.framework.infra.Runner;
+import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 
 public class FeatureRunner {
@@ -23,5 +31,36 @@ public class FeatureRunner {
 		runner.setTestList(getTestList());
 		runner.run(args);
 	}
+	
+	@BeforeTestSuite
+	public void beforeTestSuite(TestContext context) throws Exception {
+		context.getLogger().info("This method executes before each test suite");
+	}
+
+	@AfterTestSuite
+	public void afterTestSuite(TestContext context) throws Exception {
+		context.getLogger().info("This method executes after each test suite");
+	}
+	
+	@BeforeTestUnit
+	public void globalBeforeTestUnit(TestContext context) throws Exception {
+		context.getLogger().info("This method executes before each test unit");
+	}
+
+	@AfterTestUnit
+	public void globalAfterTestUnit(TestContext context) throws Exception {
+		context.getLogger().info("This method executes after each test unit");
+	}
+	
+	@BeforeTest
+	public void globalBeforeTest(TestContext context) throws Exception {
+		context.getLogger().info("This method executes before each test");
+	}
+
+	@AfterTest
+	public void globalAfterTest(TestContext context) throws Exception {
+		context.getLogger().info("This method executes after each test");
+	}
+
 
 }
