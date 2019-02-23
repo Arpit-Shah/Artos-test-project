@@ -11,7 +11,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.companyname</groupId>
 	<artifactId>artos-test-project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<!-- Organisation Info -->
 	<organization>
@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.theartos</groupId>
 			<artifactId>artos</artifactId>
-			<version>[0.0.7,)</version>
+			<version>[0.0.9,)</version>
 		</dependency>
 	</dependencies>
 
