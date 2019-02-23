@@ -1,5 +1,6 @@
 package com.tests.samples;
 
+import com.artos.annotation.Group;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestPlan;
 import com.artos.annotation.Unit;
@@ -7,17 +8,17 @@ import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 import com.artos.utils.Guard;
 
+/**
+ * <PRE>
+ * - Sample test to demonstrate the use of {@code Guard} class
+ * </PRE>
+ */
+@Group(group = "FAST")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN..WHEN..AND..THEN..")
-@TestCase(sequence = 7)
-public class Sample_Guard implements TestExecutable {
+@TestCase(sequence = 10)
+public class Sample_10_Guard implements TestExecutable {
 
-	/**
-	 * <PRE>
-	 * - Sample test to demonstrate the use of {@code Guard} class. If any condition is not met then Guard will throw an exception
-	 * </PRE>
-	 * 
-	 * @throws Exception throws an exception
-	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 1)
 	public void testUnit_1(TestContext context) throws Exception {
 		// --------------------------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 package com.tests.samples;
 
 import com.artos.annotation.ExpectedException;
+import com.artos.annotation.Group;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestPlan;
 import com.artos.annotation.Unit;
@@ -8,9 +9,10 @@ import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 import com.artos.utils.Guard;
 
+@Group(group = "FAST")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN ARTOS is used as a test framework AND ExpectedException annotation is used THEN test exceptions are easy to handle")
-@TestCase(sequence = 1)
-public class Sample_ExpectedException implements TestExecutable {
+@TestCase(sequence = 7)
+public class Sample_7_ExpectedException implements TestExecutable {
 
 	/**
 	 * <PRE>
@@ -20,6 +22,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* If Exception is not as expected or exception did not occur then test unit will be marked as a FAIL
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 1)
 	@ExpectedException(expectedExceptions = { NumberFormatException.class })
 	public void testUnit_1(TestContext context) {
@@ -37,6 +40,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* If Exception is not as expected or exception did not occur then test unit will be marked as a FAIL
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 2)
 	@ExpectedException(expectedExceptions = { Exception.class, NumberFormatException.class })
 	public void testUnit_2(TestContext context) {
@@ -54,6 +58,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* If Exception is not as expected or exception did not occur then test unit will be marked as a FAIL
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 3)
 	@ExpectedException(expectedExceptions = { Exception.class, NumberFormatException.class }, contains = "This is a test code")
 	public void testUnit_3(TestContext context) throws Exception {
@@ -71,6 +76,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* If Exception is not as expected or exception did not occur then test unit will be marked as a FAIL
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 4)
 	@ExpectedException(expectedExceptions = { Exception.class, NumberFormatException.class }, contains = ".*\\btest\\b.*")
 	public void testUnit_4(TestContext context) throws Exception {
@@ -88,6 +94,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* If Exception will not be thrown then test will continue execution and PASS eventually
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 5)
 	@ExpectedException(enforce = false, expectedExceptions = { Exception.class, NumberFormatException.class })
 	public void testUnit_5(TestContext context) throws Exception {
@@ -103,6 +110,7 @@ public class Sample_ExpectedException implements TestExecutable {
 	 * 		* This will allow user to continue executing rest of the code in case of exception. Guarding against wrong flow will help user throw exception in case code did not do what was execpted
 	 * </PRE>
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 6)
 	public void testUnit_6(TestContext context) throws Exception {
 		// --------------------------------------------------------------------------------------------

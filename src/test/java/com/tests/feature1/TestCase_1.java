@@ -6,21 +6,14 @@ import com.artos.annotation.Unit;
 import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 
-@TestPlan(preparedBy = "user", preparationDate = "12/02/2019", bdd = "GIVEN..WHEN..AND..THEN..")
-@TestCase(sequence = 1)
+@TestPlan(preparedBy = "arpit", preparationDate = "19/02/2019", bdd = "GIVEN..WHEN..AND..THEN..")
+@TestCase
 public class TestCase_1 implements TestExecutable {
 
-	@Unit(sequence = 1)
+	@Unit()
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------
-		// TODO Write Test Here
-		// --------------------------------------------------------------------------------------------
-	}
-	
-	@Unit(sequence = 2)
-	public void testUnit_2(TestContext context) {
-		// --------------------------------------------------------------------------------------------
-		// TODO Write Test Here
+		context.getLogger().info("fgfgf");
 		// --------------------------------------------------------------------------------------------
 	}
 

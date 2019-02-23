@@ -2,6 +2,7 @@ package com.tests.samples;
 
 import java.nio.ByteOrder;
 
+import com.artos.annotation.Group;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestPlan;
 import com.artos.annotation.Unit;
@@ -11,9 +12,15 @@ import com.artos.interfaces.TestExecutable;
 import com.artos.utils.Transform;
 import com.google.common.collect.Lists;
 
+/**
+ * <PRE>
+ * - Sample test to demonstrate the use of {@code Transform} class
+ * </PRE>
+ */
+@Group(group = "FAST")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN..WHEN..AND..THEN..")
-@TestCase(sequence = 6)
-public class Sample_Transform implements TestExecutable {
+@TestCase(sequence = 12)
+public class Sample_12_Transform implements TestExecutable {
 
 	/**
 	 * <PRE>
@@ -22,6 +29,7 @@ public class Sample_Transform implements TestExecutable {
 	 * 
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 1)
 	public void testUnit_1(TestContext context) throws Exception {
 		// --------------------------------------------------------------------------------------------

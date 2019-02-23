@@ -34,12 +34,12 @@ public class MasterRunner {
 
 	@BeforeTestSuite
 	public void beforeTestSuite(TestContext context) {
-		context.getLogger().info("This method executes before test suite");
+		context.getLogger().info("This method executes before a test suite");
 	}
 
 	@AfterTestSuite
 	public void afterTestSuite(TestContext context) {
-		context.getLogger().info("This method executes after test suite");
+		context.getLogger().info("This method executes after a test suite");
 	}
 
 	@BeforeTest
@@ -53,12 +53,12 @@ public class MasterRunner {
 	}
 
 	@BeforeTestUnit
-	public void beforeTestUnit(TestContext context) {
+	public void beforeTestUnitGlobal(TestContext context) {
 		context.getLogger().info("This method executes before each test unit");
 	}
 
 	@AfterTestUnit
-	public void afterTestUnit(TestContext context) {
+	public void afterTestUnitGlobal(TestContext context) {
 		context.getLogger().info("This method executes after each test unit");
 	}
 

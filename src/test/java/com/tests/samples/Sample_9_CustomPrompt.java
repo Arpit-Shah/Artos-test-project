@@ -3,6 +3,7 @@ package com.tests.samples;
 import java.io.File;
 import java.util.concurrent.CountDownLatch;
 
+import com.artos.annotation.Group;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestPlan;
 import com.artos.annotation.Unit;
@@ -10,18 +11,20 @@ import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
 import com.artos.utils.CustomPrompt;
 
+@Group(group = "SLOW")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN..WHEN..AND..THEN..")
-@TestCase(sequence = 5)
-public class Sample_CustomPrompt implements TestExecutable {
+@TestCase(sequence = 9)
+public class Sample_9_CustomPrompt implements TestExecutable {
 
 	/**
 	 * <PRE>
 	 * - Sample test to demonstrate the use of {@code Transform} class
-	 * * This example shows how to launch countdown timer
+	 * * This example shows how to launch count down timer
 	 * </PRE>
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 1)
 	public void testUnit_1(TestContext context) throws Exception {
 		// --------------------------------------------------------------------------------------------
@@ -41,6 +44,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 2)
 	public void testUnit_2(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to change title");
@@ -59,6 +63,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 3)
 	public void testUnit_3(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to enable buttons");
@@ -76,6 +81,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 4)
 	public void testUnit_4(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to change button text");
@@ -95,6 +101,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 5)
 	public void testUnit_5(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to display text");
@@ -121,6 +128,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 *
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 6)
 	public void testUnit_6(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to display live changing text");
@@ -142,6 +150,7 @@ public class Sample_CustomPrompt implements TestExecutable {
 	 * 
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 7)
 	public void testUnit_7(TestContext context) throws Exception {
 		context.getLogger().info("This example shows how to display png");
@@ -156,11 +165,12 @@ public class Sample_CustomPrompt implements TestExecutable {
 	/**
 	 * <PRE>
 	 * - Sample test to demonstrate the use of {@code CustomPrompt} class
-	 * 		* This example shows blocking countdown timer using countdown latch
+	 * 		* This example shows blocking count down timer using count down latch
 	 * </PRE>
 	 * 
 	 * @throws Exception throws an exception
 	 */
+	@Group(group = "GOODPATH")
 	@Unit(sequence = 8)
 	public void testUnit_8(TestContext context) throws Exception {
 		context.getLogger().info("This example shows blocking countdown timer using countdown latch");
