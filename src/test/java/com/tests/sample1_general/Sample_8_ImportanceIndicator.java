@@ -22,7 +22,7 @@ import com.artos.interfaces.TestExecutable;
 @TestCase(sequence = 8)
 public class Sample_8_ImportanceIndicator implements TestExecutable {
 
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@TestImportance(Importance.LOW)
 	@Unit(sequence = 1)
 	public void testUnit_1(TestContext context) {
@@ -31,7 +31,7 @@ public class Sample_8_ImportanceIndicator implements TestExecutable {
 		// --------------------------------------------------------------------------------------------
 	}
 	
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@TestImportance(Importance.HIGH)
 	@Unit(sequence = 2)
 	public void testUnit_2(TestContext context) {
@@ -40,27 +40,27 @@ public class Sample_8_ImportanceIndicator implements TestExecutable {
 		// --------------------------------------------------------------------------------------------
 	}
 	
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@TestImportance(Importance.MEDIUM)
-	@Unit(sequence = 2)
+	@Unit(sequence = 3)
 	public void testUnit_3(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.setTestStatus(TestStatus.FAIL, "Intentially failing this test case to demonstrate Importance indicator");
 		// --------------------------------------------------------------------------------------------
 	}
 	
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@TestImportance(Importance.CRITICAL)
-	@Unit(sequence = 2)
+	@Unit(sequence = 4)
 	public void testUnit_4(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.setTestStatus(TestStatus.FAIL, "Intentially failing this test case to demonstrate Importance indicator");
 		// --------------------------------------------------------------------------------------------
 	}
 	
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@TestImportance(Importance.FATAL)
-	@Unit(sequence = 2)
+	@Unit(sequence = 5)
 	public void testUnit_5(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.setTestStatus(TestStatus.FAIL, "Intentially failing this test case to demonstrate Importance indicator");

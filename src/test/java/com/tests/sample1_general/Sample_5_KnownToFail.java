@@ -32,7 +32,7 @@ public class Sample_5_KnownToFail implements TestExecutable {
 		// --------------------------------------------------------------------------------------------
 	}
 
-	@Group(group = "GOODPATH")
+	@Group(group = "BADPATH")
 	@KnownToFail(ktf = true)
 	@Unit(sequence = 2, bugref = "JIRA-123")
 	public void testUnit_2(TestContext context) {
