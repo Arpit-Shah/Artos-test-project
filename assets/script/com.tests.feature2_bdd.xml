@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration version="1">
+  <!--java -cp "artos-0.0.1.jar;test.jar" unit_test.Main - -testscript=".\script\com.tests.feature2.xml"-->
+  <suite enable="true" loopcount="1" name="UniqueName">
+    <tests>
+    </tests>
+    <featurefiles>
+      <file name="television_test.feature"/>
+    </featurefiles>
+    <parameters>
+      <parameter name="PARAMETER_0">parameterValue_0</parameter>
+      <parameter name="PARAMETER_1">parameterValue_1</parameter>
+      <parameter name="PARAMETER_2">parameterValue_2</parameter>
+    </parameters>
+    <testcasegroups>
+      <group name="*"/>
+    </testcasegroups>
+    <testunitgroups>
+      <group name="*"/>
+    </testunitgroups>
+  </suite>
+</configuration>
