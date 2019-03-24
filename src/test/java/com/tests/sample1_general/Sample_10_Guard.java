@@ -1,4 +1,4 @@
-package com.tests.samples;
+package com.tests.sample1_general;
 
 import com.artos.annotation.Group;
 import com.artos.annotation.TestCase;

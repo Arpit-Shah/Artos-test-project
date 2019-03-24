@@ -1,4 +1,4 @@
-package com.tests.samples;
+package com.tests.sample1_general;
 
 import com.artos.annotation.Group;
 import com.artos.annotation.KnownToFail;
@@ -22,8 +22,8 @@ import com.artos.interfaces.TestExecutable;
 public class Sample_5_KnownToFail implements TestExecutable {
 
 	@Group(group = "GOODPATH")
-	@KnownToFail(ktf = true, bugref = "JIRA-123")
-	@Unit(sequence = 1)
+	@KnownToFail(ktf = true)
+	@Unit(sequence = 1, bugref = "JIRA-123")
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		if (add(5, 5) != 10) {
@@ -33,8 +33,8 @@ public class Sample_5_KnownToFail implements TestExecutable {
 	}
 
 	@Group(group = "GOODPATH")
-	@KnownToFail(ktf = true, bugref = "JIRA-123")
-	@Unit(sequence = 2)
+	@KnownToFail(ktf = true)
+	@Unit(sequence = 2, bugref = "JIRA-123")
 	public void testUnit_2(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		
@@ -45,8 +45,8 @@ public class Sample_5_KnownToFail implements TestExecutable {
 	}
 	
 	@Group(group = "GOODPATH")
-	@KnownToFail(ktf = false, bugref = "JIRA-123")
-	@Unit(sequence = 3)
+	@KnownToFail(ktf = false)
+	@Unit(sequence = 3, bugref = "JIRA-123")
 	public void testUnit_3(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		if (add(5, 5) != 10) {

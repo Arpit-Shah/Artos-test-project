@@ -1,8 +1,7 @@
-package com.tests.samples;
+package com.tests.sample1_general;
 
 import com.artos.annotation.DataProvider;
 import com.artos.annotation.Group;
-import com.artos.annotation.KnownToFail;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestImportance;
 import com.artos.annotation.TestPlan;
@@ -20,7 +19,7 @@ import com.artos.utils.Transform;
  */
 @Group(group = "FAST")
 @TestPlan(preparedBy = "Arpit Shah", preparationDate = "14/02/2019", bdd = "GIVEN ARTOS is used as a test framework AND DataProvider annotation is used THEN test logic with multiple input is easy to execute")
-@TestCase(sequence = 6)
+@TestCase(sequence = 6, bugref = "JIRA-234")
 public class Sample_6_DataProvider implements TestExecutable {
 
 	/**
@@ -31,8 +30,7 @@ public class Sample_6_DataProvider implements TestExecutable {
 	 */
 	@Group(group = "GOODPATH")
 	@TestImportance(Importance.LOW)
-	@KnownToFail(bugref = "JIRA-124")
-	@Unit(sequence = 1, dataprovider = "TEST_DATA_NAME_NUM")
+	@Unit(sequence = 1, dataprovider = "TEST_DATA_NAME_NUM", bugref = "JIRA-124")
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.getLogger().info("Object 1 : " + (String) context.getParameterisedObject1());

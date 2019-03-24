@@ -1,4 +1,4 @@
-package com.tests.restassured;
+package com.tests.sample4_restassured;
 
 import com.artos.annotation.DataProvider;
 import com.artos.annotation.TestCase;
@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.*;
  * - testUnit_2 Code demonstrates that user can use given(),when(),then() methods of RestAssured with data provider to test Rest API's
  * </PRE>
  */
-@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN..WHEN..AND..THEN..")
+@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN PC has internet access AND used websites are not blocked through firewall THEN rest assured API ests should be executed successfully")
 @TestCase(sequence = 0)
 public class Sample_RestAssured implements TestExecutable {
 
@@ -52,6 +52,12 @@ public class Sample_RestAssured implements TestExecutable {
 		given().auth().preemptive().basic("username", "password").when().get("http://path.to/basic/secured/api").then().assertThat().statusCode(200);
 	}
 
+	/**
+	 * Data provider method to test an API
+	 * 
+	 * @param context TestContext object
+	 * @return 2D data provider object
+	 */
 	@DataProvider(name = "seasonsAndNumberOfRaces")
 	public Object[][] createTestDataRecords(TestContext context) {
 		// @formatter:off

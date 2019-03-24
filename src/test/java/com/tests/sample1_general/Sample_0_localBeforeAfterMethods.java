@@ -1,4 +1,4 @@
-package com.tests.samples;
+package com.tests.sample1_general;
 
 import com.artos.annotation.AfterTestUnit;
 import com.artos.annotation.BeforeTestUnit;

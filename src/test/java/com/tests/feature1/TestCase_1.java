@@ -10,8 +10,15 @@ import com.artos.interfaces.TestExecutable;
 @TestCase
 public class TestCase_1 implements TestExecutable {
 
-	@Unit()
+	@Unit(sequence = 1)
 	public void testUnit_1(TestContext context) {
+		// --------------------------------------------------------------------------------------------
+		context.getLogger().info("fgfgf");
+		// --------------------------------------------------------------------------------------------
+	}
+
+	@Unit(sequence = 2)
+	public void testUnit_2(TestContext context) {
 		// --------------------------------------------------------------------------------------------
 		context.getLogger().info("fgfgf");
 		// --------------------------------------------------------------------------------------------

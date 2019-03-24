@@ -1,26 +1,19 @@
-package com.tests.selenium;
+package com.tests.sample3_selenium;
 
-import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import com.artos.annotation.AfterTest;
 import com.artos.annotation.AfterTestUnit;
-import com.artos.annotation.BeforeTest;
 import com.artos.annotation.BeforeTestUnit;
 import com.artos.annotation.TestCase;
 import com.artos.annotation.TestPlan;
 import com.artos.annotation.Unit;
-import com.artos.exception.ValueNotAsExpectedException;
 import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
-import com.artos.utils.Guard;
 
-@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN..WHEN..AND..THEN..")
+@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN Firefox browser is installed AND 64bit drivers located in assets directory are valid for installed version of firefox THEN current test cases should launch browser and open www.theartos.com webpage")
 @TestCase
 public class Sample_Selenium implements TestExecutable {
 

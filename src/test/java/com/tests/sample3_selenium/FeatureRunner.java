@@ -1,4 +1,4 @@
-package com.tests.restassured;
+package com.tests.sample3_selenium;
 
 import java.util.ArrayList;
 import com.artos.framework.infra.Runner;

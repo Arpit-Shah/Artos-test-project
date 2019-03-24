@@ -1,12 +1,10 @@
-package com.tests;
+package com.tests.sample4_restassured;
 
 import java.util.ArrayList;
-
 import com.artos.framework.infra.Runner;
 import com.artos.interfaces.TestExecutable;
-import com.tests.sample4_restassured.FeatureRunner;
 
-public class MasterRunner {
+public class FeatureRunner {
 
 	public static ArrayList<TestExecutable> getTestList() throws Exception {
 		ArrayList<TestExecutable> tests = new ArrayList<TestExecutable>();
@@ -25,4 +23,5 @@ public class MasterRunner {
 		runner.setTestList(getTestList());
 		runner.run(args);
 	}
+
 }
