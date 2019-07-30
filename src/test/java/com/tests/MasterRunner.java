@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import com.artos.framework.infra.Runner;
 import com.artos.interfaces.TestExecutable;
-import com.tests.sample4_restassured.FeatureRunner;
 
 public class MasterRunner {
 
@@ -21,7 +20,7 @@ public class MasterRunner {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Runner runner = new Runner(FeatureRunner.class);
+		Runner runner = new Runner(MasterRunner.class);
 		runner.setTestList(getTestList());
 		runner.run(args);
 	}
