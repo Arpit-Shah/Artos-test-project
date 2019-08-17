@@ -2,6 +2,7 @@ package com.tests.sample1_general;
 
 import java.util.ArrayList;
 
+import com.artos.annotation.AfterFailedUnit;
 import com.artos.annotation.AfterTest;
 import com.artos.annotation.AfterTestSuite;
 import com.artos.annotation.AfterTestUnit;
@@ -35,7 +36,7 @@ public class FeatureRunner {
 		runner.setTestUnitGroupList(Lists.newArrayList("GOODPATH", "BADPATH"));
 		runner.run(args);
 	}
-	
+
 	@BeforeTestSuite
 	public void beforeTestSuite(TestContext context) throws Exception {
 		context.getLogger().info("This method executes before each test suite");
@@ -66,5 +67,9 @@ public class FeatureRunner {
 		context.getLogger().info("This method executes after each test");
 	}
 
+	@AfterFailedUnit
+	public void globalAfterFailedTestUnit(TestContext context) throws Exception {
+		context.getLogger().info("This method executes after failed test unit");
+	}
 
 }
