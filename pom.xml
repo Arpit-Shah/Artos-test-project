@@ -47,7 +47,7 @@
 		<dependency>
 			<groupId>com.theartos</groupId>
 			<artifactId>artos</artifactId>
-			<version>[0.0.10,)</version>
+			<version>[0.0.12,)</version>
 		</dependency>
 	</dependencies>
 

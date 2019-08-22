@@ -30,6 +30,7 @@ public class Sample_6_DataProvider implements TestExecutable {
 	 */
 	@Group(group = "GOODPATH")
 	@TestImportance(Importance.LOW)
+	@TestPlan(bdd = "GIVEN dataprovider is found AND test is written correctly THEN test will be executed with different data objects iteratively")
 	@Unit(sequence = 1, dataprovider = "TEST_DATA_NAME_NUM", bugref = "JIRA-124")
 	public void testUnit_1(TestContext context) {
 		// --------------------------------------------------------------------------------------------

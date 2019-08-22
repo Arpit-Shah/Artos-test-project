@@ -47,16 +47,6 @@ public class FeatureRunner {
 		context.getLogger().info("This method executes after each test suite");
 	}
 
-	@BeforeTestUnit
-	public void globalBeforeTestUnit(TestContext context) throws Exception {
-		context.getLogger().info("This method executes before each test unit");
-	}
-
-	@AfterTestUnit
-	public void globalAfterTestUnit(TestContext context) throws Exception {
-		context.getLogger().info("This method executes after each test unit");
-	}
-
 	@BeforeTest
 	public void globalBeforeTest(TestContext context) throws Exception {
 		context.getLogger().info("This method executes before each test");
@@ -65,6 +55,16 @@ public class FeatureRunner {
 	@AfterTest
 	public void globalAfterTest(TestContext context) throws Exception {
 		context.getLogger().info("This method executes after each test");
+	}
+
+	@BeforeTestUnit
+	public void globalBeforeTestUnit(TestContext context) throws Exception {
+		context.getLogger().info("This method executes before each test unit");
+	}
+
+	@AfterTestUnit
+	public void globalAfterTestUnit(TestContext context) throws Exception {
+		context.getLogger().info("This method executes after each test unit");
 	}
 
 	@AfterFailedUnit
