@@ -16,22 +16,43 @@ import com.artos.annotation.Unit;
 import com.artos.framework.Enums.TestStatus;
 import com.artos.framework.infra.TestContext;
 import com.artos.interfaces.TestExecutable;
+import com.artos.utils.Guard;
+import com.artos.utils.ImageCompare;
 import com.artos.utils.UtilsFile;
 
-@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN Firefox browser is installed AND 64bit drivers located in assets directory are valid for installed version of firefox THEN current test cases should launch browser and open www.theartos.com webpage")
+@TestPlan(preparedBy = "arpit", preparationDate = "6/03/2019", bdd = "GIVEN webpage has not changed AND firefox is working THEN visual regression is successful")
 @TestCase
 public class Sample_Selenium implements TestExecutable {
 
 	@Unit
 	public void testUnit_1(TestContext context) throws Exception {
 		// --------------------------------------------------------------------------------------------
+		// Launch web-site
 		WebDriver fireFoxDriver = (WebDriver) context.getGlobalObject("FIREFOX_DRIVER");
-		// fireFoxDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		fireFoxDriver.navigate().to("https://www.theartos.com");
+		Thread.sleep(8000);
+
+		// Take snapshot
 		String relativePathToImage = "./reporting/testImage.png";
 		File destFile = takeSnapShot(fireFoxDriver, relativePathToImage);
-		Thread.sleep(8000);
+
+		// Store snapshot into Extent report
 		context.setTestStatus(TestStatus.PASS, destFile, "Managed to display page successfully");
+
+		// Compare snapshot to previously captured golden sample image
+		File goldSample = new File("./assets/png/Gold_Sample.png");
+		ImageCompare ic = new ImageCompare();
+		ic.compare(goldSample, destFile, new File("./reporting/diff/"), "Result_Image");
+
+		// Get result file
+		File resultFile = ic.getResultImage();
+
+		// Store result image to report
+		if (Guard.isEquals(100, ic.getPercentageMatch())) {
+			context.setTestStatus(TestStatus.PASS, resultFile, "Snapshot matches Golden sample image");
+		} else {
+			context.setTestStatus(TestStatus.FAIL, resultFile, "Snapshot does not match Golden sample image");
+		}
 		// --------------------------------------------------------------------------------------------
 	}
 
@@ -73,7 +94,6 @@ public class Sample_Selenium implements TestExecutable {
 		UtilsFile.copyFile(srcFile, destFile, true);
 
 		return destFile;
-
 	}
 
 }
